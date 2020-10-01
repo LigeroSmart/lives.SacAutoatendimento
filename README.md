@@ -25,27 +25,29 @@ tipo de retorno
 application/json
 
 conteúdo do retorno:
-`{ 
-    "FileURL":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-}
+`
+    { 
+        "FileURL":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+    }
 `
 
 # Criar Web Service
-` <xsl:stylesheet version="1.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:output omit-xml-declaration="yes" indent="yes"/>
-  <xsl:template match="/RootElement">
-   <xsl:copy>
-       <DynamicField>
-           <Name>URLDocumentoOnline</Name>
-           <Value><xsl:value-of select="//FileURL" /></Value>
-       </DynamicField>
-       <Ticket>
-           <State>Autoatendimento</State>
-       </Ticket>
-   </xsl:copy>
-  </xsl:template>
- </xsl:stylesheet>
+`
+    <xsl:stylesheet version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+      <xsl:output omit-xml-declaration="yes" indent="yes"/>
+      <xsl:template match="/RootElement">
+       <xsl:copy>
+           <DynamicField>
+               <Name>URLDocumentoOnline</Name>
+               <Value><xsl:value-of select="//FileURL" /></Value>
+           </DynamicField>
+           <Ticket>
+               <State>Autoatendimento</State>
+           </Ticket>
+       </xsl:copy>
+      </xsl:template>
+     </xsl:stylesheet>
 `
 
 # Criar notificação
